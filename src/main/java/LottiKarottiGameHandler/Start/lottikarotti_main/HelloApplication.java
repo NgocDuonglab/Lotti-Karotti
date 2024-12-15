@@ -1,12 +1,10 @@
-package com.example.lottikarotti_main;
+package LottiKarottiGameHandler.Start.lottikarotti_main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-
-import javafx.stage.Window;
 
 public class HelloApplication extends Application {
     private static Stage primaryStage;

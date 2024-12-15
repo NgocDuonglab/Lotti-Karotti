@@ -1,8 +1,9 @@
-package com.example.lottikarotti_main;
+package LottiKarottiGameHandler.Start.lottikarotti_main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -27,7 +28,10 @@ public class GameController implements Initializable {
     @FXML
     private Rectangle myRectangle;
 
-    private String[] number = {"1 Player", "2 Players", "3 Players", "4 Players"};
+    @FXML
+    private Button myButton;
+
+    private String[] number = {"2 Players", "3 Players", "4 Players"};
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -35,15 +39,23 @@ public class GameController implements Initializable {
         myChoiceBox.setOnAction(this::getChoice);
         setBackgroundImage();
         setRectangleBackground();
+        myButton.setVisible(false);
     }
 
     public void getChoice(ActionEvent event) {
         String myChoice = myChoiceBox.getValue();
         myLabel.setText(myChoice);
+        myLabel.setTextFill(Color.BLACK);
+        myLabel.setLayoutX((myRectangle.getLayoutX() + myRectangle.getWidth() / 2) - (myLabel.getWidth() / 2));
+        myLabel.setLayoutY(myRectangle.getLayoutY() + (myRectangle.getHeight() / 2) - (myLabel.getHeight() / 2));
+        myButton.setVisible(true);
+        myButton.setLayoutX((myImageView.getFitWidth() / 2) - (myButton.getWidth() / 2));
+        myButton.setLayoutY(myRectangle.getLayoutY() + myRectangle.getHeight() + 20);
+        myChoiceBox.setVisible(false);
     }
 
     private void setBackgroundImage() {
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/lottikarotti_main/images/main-background.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/LottiKarottiGameHandler/Start/lottikarotti_main/images/main-background.png"));
         myImageView.setImage(backgroundImage);
     }
 
