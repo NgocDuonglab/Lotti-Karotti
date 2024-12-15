@@ -1,4 +1,4 @@
-package com.example.lottikarotti_main;
+package GameHandler.lottikarotti_main;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

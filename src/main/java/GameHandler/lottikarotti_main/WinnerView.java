@@ -1,4 +1,4 @@
-package com.example.lottikarotti_main;
+package GameHandler.lottikarotti_main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
