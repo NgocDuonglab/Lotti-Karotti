@@ -1,0 +1,10 @@
+/* Common styles for buttons */
+.button {
+    -fx-background-radius: 5em;
+    -fx-min-width: 170px;
+    -fx-min-height: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px;
+    -fx-font-size:  25px;
+    -fx-font-weight: bold;
+}

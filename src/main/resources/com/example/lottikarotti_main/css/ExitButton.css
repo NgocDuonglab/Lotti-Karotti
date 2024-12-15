@@ -1,0 +1,17 @@
+/* Red "Quit" button */
+@import url("Button.css");
+
+.quit-button {
+    -fx-background-color: linear-gradient(#d9534f, #c43e3b);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+
+}
+
+.quit-button:hover {
+    -fx-background-color: linear-gradient(#e66b68, #d9534f);
+}
+
+.quit-button:pressed {
+    -fx-background-color: linear-gradient(#b72b28, #a73230);
+}

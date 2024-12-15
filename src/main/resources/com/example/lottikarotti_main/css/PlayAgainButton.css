@@ -1,0 +1,16 @@
+@import url("Button.css");
+
+
+.play-again-button {
+    -fx-background-color: linear-gradient(#32a852, #2a8f49);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.play-again-button:hover {
+    -fx-background-color: linear-gradient(#3cbf63, #32a852);
+}
+
+.play-again-button:pressed {
+    -fx-background-color: linear-gradient(#287d44, #1e6c38);
+}
