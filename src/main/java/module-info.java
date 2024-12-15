@@ -7,4 +7,6 @@ module com.example.lottikarotti_main {
 
     opens com.example.lottikarotti_main to javafx.fxml;
     exports com.example.lottikarotti_main;
+    exports com.example.Controller;
+    opens com.example.Controller to javafx.fxml;
 }
