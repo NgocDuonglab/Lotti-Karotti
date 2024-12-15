@@ -12,7 +12,7 @@ public class HelloApplication extends Application {
     private static Stage primaryStage;
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("views/hello-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("View/hello-view.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("winner-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setResizable(false);
