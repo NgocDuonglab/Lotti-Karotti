@@ -1,4 +1,4 @@
-package com.example.lottikarotti_main;
+package GameHandler.lottikarotti_main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,7 +43,7 @@ public class GameController implements Initializable {
     }
 
     private void setBackgroundImage() {
-        Image backgroundImage = new Image(getClass().getResourceAsStream("/com/example/lottikarotti_main/images/main-background.png"));
+        Image backgroundImage = new Image(getClass().getResourceAsStream("/GameHandler/lottikarotti_main/images/main-background.png"));
         myImageView.setImage(backgroundImage);
     }
 

@@ -5,6 +5,6 @@ module com.example.lottikarotti_main {
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
 
-    exports com.example.lottikarotti_main;
-    opens com.example.lottikarotti_main to javafx.fxml;
+    exports GameHandler.lottikarotti_main;
+    opens GameHandler.lottikarotti_main to javafx.fxml;
 }

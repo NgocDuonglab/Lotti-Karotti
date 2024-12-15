@@ -1,4 +1,4 @@
-package com.example.Utils;
+package GameHandler.Utils;
 
 public class SoundManager {
 }
