@@ -9,11 +9,11 @@
     <children>
         <AnchorPane layoutX="1.0" layoutY="-3.0">
             <children>
-                <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="-1.0">
-                    <Image url="@../images/winner-final_2.jpg" />
+                <ImageView fitHeight="729.0" fitWidth="1280.0" layoutX="-1.0">
+                    <Image url="@../images/winner-background.jpg" />
                 </ImageView>
-                <Button alignment="CENTER" layoutX="409.0" layoutY="498.0" maxHeight="149.0" maxWidth="147.0" minHeight="171.0" minWidth="171.0" mnemonicParsing="false" onAction="#onWinnerButtonClick" prefHeight="180.0" prefWidth="149.0" styleClass="play-again-button" stylesheets="@../css/PlayAgainButton.css" text="Play Again" textAlignment="CENTER" />
-                <Button id="closeButton" cancelButton="true" layoutX="732.0" layoutY="497.0" mnemonicParsing="false" onAction="#onExitButtonClick" styleClass="quit-button" stylesheets="@../css/ExitButton.css" text="Quit Game" textAlignment="CENTER" />
+                <Button alignment="CENTER" layoutX="410.0" layoutY="504.0" maxHeight="149.0" maxWidth="147.0" minHeight="171.0" minWidth="171.0" mnemonicParsing="false" onAction="#onWinnerButtonClick" prefHeight="180.0" prefWidth="149.0" styleClass="play-again-button" stylesheets="@../css/PlayAgainButton.css" text="Play Again" textAlignment="CENTER" />
+                <Button id="closeButton" cancelButton="true" layoutX="734.0" layoutY="502.0" mnemonicParsing="false" onAction="#onExitButtonClick" styleClass="quit-button" stylesheets="@../css/ExitButton.css" text="Quit Game" textAlignment="CENTER" />
             </children>
         </AnchorPane>
     </children>
