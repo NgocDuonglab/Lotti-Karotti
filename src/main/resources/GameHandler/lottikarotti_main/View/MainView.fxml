@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameHandler.lottikarotti_main.GameController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/MainView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameHandler.lottikarotti_main.GameController">
    <children>
       <ImageView fx:id="myImageView" fitHeight="720.0" fitWidth="1304.0" pickOnBounds="true">
          <image>
-            <Image url="@../images/main-background.png" />
+            <Image url="@../../../../../../../Downloads/main-background.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="myRectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" layoutX="492.0" layoutY="326.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Label fx:id="myLabel" layoutX="510.0" layoutY="328.0" text="HOW MANY PLAYER?">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="myChoiceBox" layoutX="517.0" layoutY="376.0" prefWidth="150.0" />
+      <Button layoutX="577.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="2 Players" />
+      <Button layoutX="579.0" layoutY="372.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="3 Players" />
+      <Button layoutX="581.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="4 Players" />
    </children>
 </AnchorPane>
