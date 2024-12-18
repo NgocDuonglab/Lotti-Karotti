@@ -1,0 +1,75 @@
+/* Style for the game name label */
+.label {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff6600;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Style for the rabbit buttons */
+.rabbit-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+}
+
+/* Style for the card button */
+.card-button {
+    -fx-background-color: #ffcc00;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+}
+
+.card-button:hover {
+    -fx-background-color: #ff9900;
+}
+
+.card-button:pressed {
+    -fx-background-color: #cc9900;
+}
+
+/* Style for the rabbit count labels */
+.rabbit-count {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff6600;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Style for the finish label */
+.finish-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-color: #ff4500;
+    -fx-background-radius: 15;
+    -fx-padding: 10 20;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+}
+
+/* Style for the carrot buttons */
+.carrot-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+}
