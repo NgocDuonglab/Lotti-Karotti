@@ -1,5 +1,6 @@
 package GameHandler.lottikarotti_main;
 
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,9 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,9 +25,41 @@ public class GameController implements Initializable {
     @FXML
     private ImageView myImageView;
 
+    @FXML
+    private ChoiceBox<String> choiceBox;
+
+    @FXML
+    private Button startButton;
+
+    @FXML
+    private Label label;
+
+    @FXML
+    private Rectangle rectangle;
+
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         setBackgroundImage();
+        startButton.setVisible(false); // Hide the start button initially
+
+        // Add items to the choice box
+        choiceBox.getItems().addAll("2 Players", "3 Players", "4 Players");
+
+        // Add listener to show the start button and update the label when a selection is made
+        choiceBox.setOnAction(event -> {
+            if (choiceBox.getValue() != null) {
+                label.setText(choiceBox.getValue()); // Update the label with the selected number of players
+                choiceBox.setVisible(false); // Hide the choice box
+
+                // Pause for a few seconds before hiding the rectangle and showing the start button
+                PauseTransition pause = new PauseTransition(Duration.seconds(1));
+                pause.setOnFinished(e -> {
+                    rectangle.setVisible(false); // Hide the rectangle
+                    startButton.setVisible(true); // Show the start button
+                });
+                pause.play();
+            }
+        });
     }
 
     @FXML
@@ -31,31 +68,16 @@ public class GameController implements Initializable {
         String buttonText = clickedButton.getText();
         System.out.println("Button clicked: " + buttonText);
 
-        // Load the next scene
+        // Load the board view scene
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameHandler/lottikarotti_main/View/NextScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GameHandler/lottikarotti_main/View/BoardView.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) clickedButton.getScene().getWindow();
             stage.setScene(new Scene(root));
             SceneChanger.setPrimaryStage(stage);
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    @FXML
-    private void onCLickThreePlayerButtonAction() throws IOException{
-        SceneChanger.changeScene("View/BoardView.fxml");
-    }
-    @FXML
-    private void onCLickTwoPlayerButtonAction() throws IOException{
-        SceneChanger.changeScene("View/BoardView.fxml");
-    }
-
-    @FXML
-    private void onCLickFourPlayerButtonAction() throws IOException{
-        SceneChanger.changeScene("View/BoardView.fxml");
     }
 
     private void setBackgroundImage() {
