@@ -19,6 +19,8 @@ public class Main extends Application {
         primaryStage.setTitle("Lotti Karotti Main");
         primaryStage.show();
 
+        SceneChanger.setPrimaryStage(primaryStage);
+
         primaryStage.setResizable(false);
     }
 

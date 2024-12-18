@@ -11,6 +11,6 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() throws IOException {
-        HelloApplication.   changeScene("View/WinnerView.fxml");
+        SceneChanger.changeScene("View/WinnerView.fxml");
     }
 }
