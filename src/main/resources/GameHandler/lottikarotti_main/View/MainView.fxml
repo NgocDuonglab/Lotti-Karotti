@@ -9,11 +9,11 @@
    <children>
       <ImageView fx:id="myImageView" fitHeight="720.0" fitWidth="1304.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../../Downloads/main-background.png" />
+            <Image url="@../images/main-background.png" />
          </image>
       </ImageView>
-      <Button layoutX="577.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="2 Players" />
-      <Button layoutX="579.0" layoutY="372.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="3 Players" />
-      <Button layoutX="581.0" layoutY="461.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="4 Players" />
+      <Button layoutX="577.0" layoutY="284.0" mnemonicParsing="false" onAction="#onCLickTwoPlayerButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="2 Players" />
+      <Button layoutX="579.0" layoutY="372.0" mnemonicParsing="false" onAction="#onCLickThreePlayerButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="3 Players" />
+      <Button layoutX="581.0" layoutY="461.0" mnemonicParsing="false" onAction="#onCLickFourPlayerButtonAction" prefHeight="70.0" prefWidth="220.0" styleClass="game-button" text="4 Players" />
    </children>
 </AnchorPane>

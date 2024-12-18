@@ -22,11 +22,6 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
-    public static void changeScene(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
-        Scene scene = new Scene(fxmlLoader.load());
-        primaryStage.setScene(scene);
-    }
 
     public static void main(String[] args) {
         launch();

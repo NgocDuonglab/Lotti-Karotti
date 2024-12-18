@@ -37,9 +37,25 @@ public class GameController implements Initializable {
             Parent root = loader.load();
             Stage stage = (Stage) clickedButton.getScene().getWindow();
             stage.setScene(new Scene(root));
+            SceneChanger.setPrimaryStage(stage);
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void onCLickThreePlayerButtonAction() throws IOException{
+        SceneChanger.changeScene("View/BoardView.fxml");
+    }
+    @FXML
+    private void onCLickTwoPlayerButtonAction() throws IOException{
+        SceneChanger.changeScene("View/BoardView.fxml");
+    }
+
+    @FXML
+    private void onCLickFourPlayerButtonAction() throws IOException{
+        SceneChanger.changeScene("View/BoardView.fxml");
     }
 
     private void setBackgroundImage() {

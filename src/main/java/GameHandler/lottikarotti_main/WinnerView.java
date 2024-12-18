@@ -13,7 +13,7 @@ public class WinnerView {
 
     @FXML
     protected void onWinnerButtonClick() throws IOException {
-        HelloApplication.changeScene("View/hello-view.fxml");
+        SceneChanger.changeScene("View/hello-view.fxml");
     }
 
     @FXML
