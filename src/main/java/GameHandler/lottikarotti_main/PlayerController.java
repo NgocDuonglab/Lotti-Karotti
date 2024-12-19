@@ -41,6 +41,7 @@ public class PlayerController implements Initializable {
 
         System.out.println("pinkRabbit: " + pinkRabbit);
         System.out.println("FXML Injection Successful: " + (pinkRabbit != null));
+        // Enable all rabbits initially
         enableAllRabbits();
         handlePlayerSelection(GameController.player);
 
@@ -59,14 +60,10 @@ public class PlayerController implements Initializable {
 
 
     private void handlePlayerSelection(int selection) {
-        // Enable all rabbits initially
-        System.out.println(selection);
-        //enableAllRabbits();
 
         // Disable rabbits based on the selection
         switch (selection) {
             case 2:
-                System.out.println("2 Players");
                 pinkRabbit.setVisible(false);
                 pinkRabbit_label.setVisible(false);
                 purpleRabbit.setVisible(false);
