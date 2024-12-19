@@ -42,9 +42,6 @@ public class PlayerController implements Initializable {
         System.out.println("pinkRabbit: " + pinkRabbit);
         System.out.println("FXML Injection Successful: " + (pinkRabbit != null));
         enableAllRabbits();
-
-        GameController gc = new GameController();
-
         handlePlayerSelection(GameController.player);
 
     }
