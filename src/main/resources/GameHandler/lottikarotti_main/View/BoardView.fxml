@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/BoardView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/BoardView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameHandler.lottikarotti_main.PlayerController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1305.0" layoutX="-10.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1305.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/background_board_view.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="56.0" layoutY="8.0" prefHeight="51.0" prefWidth="328.0" styleClass="label" text="LOTTI KAROTTI" />
-      <Button layoutX="1112.0" layoutY="57.0" mnemonicParsing="false" styleClass="rabbit-button" text="" />
-      <Label layoutX="1151.0" layoutY="70.0" styleClass="rabbit-count" text="0" />
-      <Button layoutX="1109.0" layoutY="138.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="40.0" styleClass="rabbit-button" text="" />
-      <Label layoutX="1151.0" layoutY="169.0" styleClass="rabbit-count" text="0" />
-      <Button layoutX="1113.0" layoutY="227.0" mnemonicParsing="false" prefHeight="81.0" prefWidth="40.0" styleClass="rabbit-button" text="" />
-      <Label layoutX="1154.0" layoutY="266.0" styleClass="rabbit-count" text="0" />
-      <Button layoutX="1110.0" layoutY="318.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="40.0" styleClass="rabbit-button" text="" />
-      <Label layoutX="1154.0" layoutY="365.0" styleClass="rabbit-count" text="0" />
+      <Label fx:id="greenRabbit_label" layoutX="1154.0" layoutY="69.0" styleClass="rabbit-count" text="0" />
+      <Label fx:id="yellowRabbit_label" layoutX="1154.0" layoutY="150.0" styleClass="rabbit-count" text="0" />
+      <Label fx:id="pinkRabbit_label" layoutX="1154.0" layoutY="238.0" styleClass="rabbit-count" text="0" />
+      <Label fx:id="purpleRabbit_label" layoutX="1154.0" layoutY="307.0" styleClass="rabbit-count" text="0" />
       <Button layoutX="874.0" layoutY="593.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="169.0" styleClass="card-button" text="Draw Card" />
       <ImageView fitHeight="206.0" fitWidth="160.0" layoutX="1074.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -30,5 +26,25 @@
       </ImageView>
       <Label alignment="CENTER" layoutX="688.0" layoutY="307.0" prefHeight="48.0" prefWidth="131.0" styleClass="finish-label" text="FINISH!" />
       <Button layoutX="568.0" layoutY="350.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="85.0" styleClass="carrot-button" text="" />
+      <ImageView fx:id="greenRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/green_bunny.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="yellowRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/yellow_bunny.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pinkRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/pink_bunny.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="purpleRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/purple_bunny.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
