@@ -6,19 +6,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/BoardView.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameHandler.lottikarotti_main.PlayerController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1305.0" layoutX="-10.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="720.0" fitWidth="1305.0" layoutX="1.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/background_board_view.jpg" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="56.0" layoutY="8.0" prefHeight="51.0" prefWidth="328.0" styleClass="label" text="LOTTI KAROTTI" />
-      <Label fx:id="greenRabbit_label" layoutX="1154.0" layoutY="69.0" styleClass="rabbit-count" text="0" />
-      <Label fx:id="yellowRabbit_label" layoutX="1154.0" layoutY="150.0" styleClass="rabbit-count" text="0" />
-      <Label fx:id="pinkRabbit_label" layoutX="1154.0" layoutY="238.0" styleClass="rabbit-count" text="0" />
-      <Label fx:id="purpleRabbit_label" layoutX="1154.0" layoutY="307.0" styleClass="rabbit-count" text="0" />
+      <Label fx:id="greenRabbit_label" layoutX="1154.0" layoutY="69.0" styleClass="rabbit-count" text="4" textFill="#33663b">
+         <font>
+            <Font name="Corbel Light" size="12.0" />
+         </font></Label>
+      <Label fx:id="yellowRabbit_label" layoutX="1154.0" layoutY="142.0" styleClass="rabbit-count" text="4" />
+      <Label fx:id="pinkRabbit_label" layoutX="1154.0" layoutY="216.0" styleClass="rabbit-count" text="4" />
+      <Label fx:id="purpleRabbit_label" layoutX="1154.0" layoutY="282.0" styleClass="rabbit-count" text="4" />
       <Button fx:id="cardMix" layoutX="874.0" layoutY="593.0" mnemonicParsing="false" onMouseClicked="#cardMixOnClicked" prefHeight="60.0" prefWidth="169.0" styleClass="card-button" text="Draw Card" />
       <ImageView fx:id="cardView" fitHeight="206.0" fitWidth="160.0" layoutX="1074.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -32,17 +36,17 @@
             <Image url="@../images/green_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="yellowRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="yellowRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="113.0" onMouseClicked="#yellowRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/yellow_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="pinkRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pinkRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="188.0" onMouseClicked="#pinkRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/pink_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="purpleRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="purpleRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="263.0" onMouseClicked="#purpleRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/purple_bunny.png" />
          </image>
@@ -74,5 +78,6 @@
       <Circle fx:id="path15" fill="DODGERBLUE" layoutX="568.0" layoutY="127.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="path11" fill="DODGERBLUE" layoutX="296.0" layoutY="201.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="path20" fill="DODGERBLUE" layoutX="811.0" layoutY="335.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="start" fill="#ffb01f" layoutX="922.0" layoutY="537.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
