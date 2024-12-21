@@ -1,6 +1,6 @@
 /* Style for the game name label */
 .label {
-    -fx-font-size: 36px;
+    -fx-font-size: 27px;
     -fx-font-weight: bold;
     -fx-text-fill: #ff6600;
     -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -23,7 +23,7 @@
 .card-button {
     -fx-background-color: #ffcc00;
     -fx-text-fill: black;
-    -fx-font-size: 24px;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
     -fx-background-radius: 10;
