@@ -15,7 +15,11 @@
             <Image url="@../images/background_board_view.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="56.0" layoutY="8.0" prefHeight="51.0" prefWidth="328.0" styleClass="label" text="LOTTI KAROTTI" />
+      <ImageView fx:id="carrot" fitHeight="150.0" fitWidth="200.0" layoutX="498.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/carrot.png" />
+         </image></ImageView>
+      <Label alignment="CENTER" layoutX="1.0" layoutY="9.0" prefHeight="51.0" prefWidth="328.0" styleClass="label" text="LOTTI KAROTTI" />
       <Label fx:id="greenRabbit_label" layoutX="1154.0" layoutY="69.0" styleClass="rabbit-count" text="4" textFill="#33663b">
          <font>
             <Font name="Corbel Light" size="12.0" />
@@ -23,61 +27,62 @@
       <Label fx:id="yellowRabbit_label" layoutX="1154.0" layoutY="142.0" styleClass="rabbit-count" text="4" />
       <Label fx:id="pinkRabbit_label" layoutX="1154.0" layoutY="216.0" styleClass="rabbit-count" text="4" />
       <Label fx:id="purpleRabbit_label" layoutX="1154.0" layoutY="282.0" styleClass="rabbit-count" text="4" />
-      <Button fx:id="cardMix" layoutX="874.0" layoutY="593.0" mnemonicParsing="false" onMouseClicked="#cardMixOnClicked" prefHeight="60.0" prefWidth="169.0" styleClass="card-button" text="Draw Card" />
-      <ImageView fx:id="cardView" fitHeight="206.0" fitWidth="160.0" layoutX="1074.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="cardMix" layoutX="911.0" layoutY="630.0" mnemonicParsing="false" onMouseClicked="#cardMixOnClicked" prefHeight="52.0" prefWidth="148.0" styleClass="card-button" text="Draw Card" />
+      <ImageView fx:id="cardView" fitHeight="206.0" fitWidth="160.0" layoutX="1080.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/card_background.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="513.0" layoutY="215.0" prefHeight="48.0" prefWidth="131.0" styleClass="finish-label" text="FINISH!" />
       <Button layoutX="568.0" layoutY="350.0" mnemonicParsing="false" prefHeight="141.0" prefWidth="85.0" styleClass="carrot-button" text="" />
-      <ImageView fx:id="greenRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="34.0" onMouseClicked="#greenRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="greenRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="34.0" onMouseClicked="#rabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/green_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="yellowRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="113.0" onMouseClicked="#yellowRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="yellowRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="113.0" onMouseClicked="#rabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/yellow_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="pinkRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="188.0" onMouseClicked="#pinkRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="pinkRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="188.0" onMouseClicked="#rabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/pink_bunny.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="purpleRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="263.0" onMouseClicked="#purpleRabbitOnClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="purpleRabbit" fitHeight="93.0" fitWidth="85.0" layoutX="1077.0" layoutY="263.0" onMouseClicked="#rabbitOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/purple_bunny.png" />
          </image>
       </ImageView>
-      <Circle fx:id="path1" fill="DODGERBLUE" layoutX="848.0" layoutY="574.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path2" fill="DODGERBLUE" layoutX="777.0" layoutY="563.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path3" fill="DODGERBLUE" layoutX="696.0" layoutY="574.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path4" fill="DODGERBLUE" layoutX="597.0" layoutY="593.0" radius="57.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path5" fill="DODGERBLUE" layoutX="505.0" layoutY="574.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path6" fill="DODGERBLUE" layoutX="411.0" layoutY="554.0" radius="57.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path7" fill="DODGERBLUE" layoutX="332.0" layoutY="491.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path8" fill="DODGERBLUE" layoutX="296.0" layoutY="415.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path9" fill="DODGERBLUE" layoutX="246.0" layoutY="350.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path10" fill="DODGERBLUE" layoutX="254.0" layoutY="266.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path12" fill="DODGERBLUE" layoutX="354.0" layoutY="138.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path13" fill="DODGERBLUE" layoutX="426.0" layoutY="83.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path16" fill="DODGERBLUE" layoutX="664.0" layoutY="150.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path22" fill="DODGERBLUE" layoutX="670.0" layoutY="387.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path18" fill="DODGERBLUE" layoutX="819.0" layoutY="225.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path19" fill="DODGERBLUE" layoutX="890.0" layoutY="289.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path25" fill="DODGERBLUE" layoutX="421.0" layoutY="323.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path26" fill="DODGERBLUE" layoutX="384.0" layoutY="275.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path27" fill="DODGERBLUE" layoutX="463.0" layoutY="225.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path24" fill="DODGERBLUE" layoutX="463.0" layoutY="350.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path23" fill="DODGERBLUE" layoutX="560.0" layoutY="393.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path21" fill="DODGERBLUE" layoutX="739.0" layoutY="361.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path17" fill="DODGERBLUE" layoutX="740.0" layoutY="188.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path14" fill="DODGERBLUE" layoutX="497.0" layoutY="97.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path15" fill="DODGERBLUE" layoutX="568.0" layoutY="127.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path11" fill="DODGERBLUE" layoutX="296.0" layoutY="201.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="path20" fill="DODGERBLUE" layoutX="811.0" layoutY="335.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="start" fill="#ffb01f" layoutX="922.0" layoutY="537.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
-   </children>
+      <Circle fx:id="path1" fill="DODGERBLUE" layoutX="861.0" layoutY="547.0" radius="29.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path2" fill="DODGERBLUE" layoutX="790.0" layoutY="563.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path3" fill="DODGERBLUE" layoutX="710.0" layoutY="593.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path4" fill="DODGERBLUE" layoutX="611.0" layoutY="611.0" radius="57.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path5" fill="DODGERBLUE" layoutX="517.0" layoutY="593.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path6" fill="DODGERBLUE" layoutX="426.0" layoutY="563.0" radius="57.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path7" fill="DODGERBLUE" layoutX="338.0" layoutY="518.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path8" fill="DODGERBLUE" layoutX="289.0" layoutY="448.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path9" fill="DODGERBLUE" layoutX="254.0" layoutY="373.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path10" fill="DODGERBLUE" layoutX="247.0" layoutY="288.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path12" fill="DODGERBLUE" layoutX="317.0" layoutY="147.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path13" fill="DODGERBLUE" layoutX="394.0" layoutY="97.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path16" fill="DODGERBLUE" layoutX="641.0" layoutY="77.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path22" fill="DODGERBLUE" layoutX="796.0" layoutY="425.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path18" fill="DODGERBLUE" layoutX="811.0" layoutY="130.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path19" fill="DODGERBLUE" layoutX="879.0" layoutY="206.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path25" fill="DODGERBLUE" layoutX="541.0" layoutY="406.0" radius="26.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path26" fill="DODGERBLUE" layoutX="510.0" layoutY="347.0" radius="43.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path27" fill="DODGERBLUE" layoutX="555.0" layoutY="282.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path24" fill="DODGERBLUE" layoutX="592.0" layoutY="432.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path23" fill="DODGERBLUE" layoutX="694.0" layoutY="448.0" radius="70.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path21" fill="DODGERBLUE" layoutX="857.0" layoutY="373.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path17" fill="DODGERBLUE" layoutX="731.0" layoutY="97.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path14" fill="DODGERBLUE" layoutX="461.0" layoutY="77.0" radius="30.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path15" fill="DODGERBLUE" layoutX="542.0" layoutY="59.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path11" fill="DODGERBLUE" layoutX="267.0" layoutY="216.0" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="path20" fill="DODGERBLUE" layoutX="879.0" layoutY="296.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="start" fill="#ffb01f" layoutX="932.0" layoutY="510.0" radius="53.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button fx:id="buttonQuit" layoutX="1201.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#buttonQuitOnClicked" prefHeight="39.0" prefWidth="42.0" text="Quit" />
+      <Label fx:id="currentPlayerLabel" layoutX="985.0" layoutY="342.0" text="Label" />
+    </children>
 </AnchorPane>
