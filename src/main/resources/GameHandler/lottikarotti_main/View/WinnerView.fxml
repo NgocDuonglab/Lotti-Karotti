@@ -14,7 +14,7 @@
                 </ImageView>
                 <Button alignment="CENTER" layoutX="410.0" layoutY="504.0" maxHeight="149.0" maxWidth="147.0" minHeight="171.0" minWidth="171.0" mnemonicParsing="false" onAction="#onWinnerButtonClick" prefHeight="180.0" prefWidth="149.0" styleClass="play-again-button" stylesheets="@../css/PlayAgainButton.css" text="Play Again" textAlignment="CENTER" />
                 <Button id="closeButton" cancelButton="true" layoutX="734.0" layoutY="502.0" mnemonicParsing="false" onAction="#onExitButtonClick" styleClass="quit-button" stylesheets="@../css/ExitButton.css" text="Quit Game" textAlignment="CENTER" />
-            <ImageView fx:id="rabbitImageView" fitHeight="150.0" fitWidth="200.0" layoutX="534.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="rabbitImageView" fitHeight="150.0" fitWidth="200.0" layoutX="565.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/pink_bunny.png" />
                </image></ImageView>

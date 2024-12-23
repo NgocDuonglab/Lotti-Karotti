@@ -16,6 +16,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -123,6 +124,7 @@ public class PlayerController implements Initializable {
         System.out.println("Game started. Player Turn: Green");
 
         initializeExistingRabbits();
+        randomIndex =4;
 
     }
 
@@ -204,7 +206,14 @@ public class PlayerController implements Initializable {
 
                 // If card index is 0, change the color of three random holes
                 if (randomIndex == 0) {
-                    makeRandomHoles();
+
+
+                    // Shake the carrot image view
+                    TranslateTransition carrotShake = new TranslateTransition(Duration.millis(200), carrot);
+                    carrotShake.setByX(10); // Adjust the shake intensity
+                    carrotShake.setCycleCount(6); // Total shakes (back and forth counts as one)
+                    carrotShake.setAutoReverse(true); // Return to the original position
+                    carrotShake.play(); // Play the shake animation
 
                 }
             });
@@ -216,57 +225,7 @@ public class PlayerController implements Initializable {
     }
 
 
-    /*@FXML
-    private void rabbitOnClicked(MouseEvent mouseEvent) {
-        // Determine which rabbit was clicked
-        ImageView clickedRabbit = (ImageView) mouseEvent.getSource();
 
-        // Map the rabbit to the corresponding player and image path
-        int rabbitPlayer;
-        String rabbitImagePath;
-        String rabbitcolor;
-        Label rabbitLabel;
-
-        if (clickedRabbit == greenRabbit) {
-            rabbitPlayer = 0;
-            rabbitImagePath = "/GameHandler/lottikarotti_main/images/green_bunny.png";
-            rabbitLabel = greenRabbit_label;
-            rabbitcolor = "green";
-        } else if (clickedRabbit == yellowRabbit) {
-            rabbitPlayer = 1;
-            rabbitImagePath = "/GameHandler/lottikarotti_main/images/yellow_bunny.png";
-            rabbitLabel = yellowRabbit_label;
-            rabbitcolor = "yellow";
-        } else if (clickedRabbit == pinkRabbit) {
-            rabbitPlayer = 2;
-            rabbitImagePath = "/GameHandler/lottikarotti_main/images/pink_bunny.png";
-            rabbitLabel = pinkRabbit_label;
-            rabbitcolor = "pink";
-        } else if (clickedRabbit == purpleRabbit) {
-            rabbitPlayer = 3;
-            rabbitImagePath = "/GameHandler/lottikarotti_main/images/purple_bunny.png";
-            rabbitLabel = purpleRabbit_label;
-            rabbitcolor = "purple";
-        } else {
-            System.err.println("Unknown rabbit clicked!");
-            return;
-        }
-
-        // Check if it's the current player's turn
-        if (currentPlayer != rabbitPlayer) {
-            showTurnErrorAlert(getPlayerColor(rabbitPlayer)); // Display alert
-            return;
-        }
-        if (!cardDrawn) {
-
-            showCardDrawnAlert(getPlayerColor(rabbitPlayer));
-
-        }else {
-
-            // Add the rabbit to the path
-            addRabbitToPath(rabbitImagePath, start, rabbitLabel, rabbitcolor);
-        }
-    }*/
     @FXML
     private void rabbitOnClicked(MouseEvent mouseEvent) {
         ImageView clickedRabbit = (ImageView) mouseEvent.getSource();
@@ -313,12 +272,18 @@ public class PlayerController implements Initializable {
             showCardDrawnAlert(getPlayerColor(rabbitPlayer));
             return;
         }
+        //When the carrot card is selected, no rabbits can be clicked
+        if (randomIndex == 0){
+            showCarrotErrorAlert(getPlayerColor(rabbitPlayer));
+            return;
+        }
 
         // Allow choosing between adding a new rabbit or moving an existing one
         if (!rabbitPositionMap.containsKey(clickedRabbit)) {
             // Add and move a new rabbit
             addRabbitToPath(rabbitImagePath, start, rabbitLabel, rabbitColor);
         } else {
+            // Move an existing rabbit
             // Move an existing rabbit
             moveRabbit(clickedRabbit);
         }
@@ -353,6 +318,24 @@ public class PlayerController implements Initializable {
         alert.showAndWait(); // Wait for the user to dismiss the alert
     }
 
+
+    private void showCarrotErrorAlert(String playerColor) {
+        // Create a warning alert
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+
+        // Set the title of the alert to reflect the player's turn
+        alert.setTitle(playerColor + " Player's Turn");
+
+        // No header text for simplicity
+        alert.setHeaderText(null);
+
+        // Set an informative and engaging message
+        alert.setContentText(playerColor + " player, it's your turn! Click on a carrot to proceed.\n"
+                + "If a field opens, it will create a hole in the ground.");
+
+        // Show the alert and wait for dismissal
+        alert.showAndWait();
+    }
 
 
     private void addRabbitToPath(String rabbitImagePath, Circle startingPath, Label rabbitLabel, String rabbitColor) {
@@ -513,41 +496,14 @@ public class PlayerController implements Initializable {
 
         if (cardDrawn == true) {
             updatePlayerTurn();
-            randomIndex = 0; //initial randomIndex
+            randomIndex = 4; //initial randomIndex
         }
 
 
 
     }
 
-/*
-    private void updatePlayerTurn() {
-        // Move to the next player
-        currentPlayer = (currentPlayer + 1) % totalPlayers;
-        // Reset the cardDrawn flag for the new turn
 
-        cardDrawn = false;
-
-        // Update the UI to reflect the current player
-        String playerColor;
-        switch (currentPlayer) {
-            case 0: playerColor = "Green"; break;
-            case 1: playerColor = "Yellow"; break;
-            case 2: playerColor = "Pink"; break;
-            case 3: playerColor = "Purple"; break;
-            default: playerColor = "Unknown"; break;
-        }
-        // Enable only the current player's rabbits
-        greenRabbit.setDisable(currentPlayer != 0);
-        yellowRabbit.setDisable(currentPlayer != 1);
-        pinkRabbit.setDisable(currentPlayer != 2);
-        purpleRabbit.setDisable(currentPlayer != 3);
-
-        // Update the currentPlayerLabel
-      //  String playerColor = getPlayerColor(currentPlayer);
-        currentPlayerLabel.setText("Current Player: " + playerColor);
-    }
-*/
 
     private void updatePlayerTurn() {
         do {
@@ -678,10 +634,10 @@ public class PlayerController implements Initializable {
             Parent root = loader.load();
 
             // Get the controller for the WinnerView
-          //  WinnerView winnerController = loader.getController();
+           WinnerView winnerController = loader.getController();
 
             // Pass the winner ID to the controller
-          //  winnerController.setWinnerId(winningRabbit.getId());
+            winnerController.setWinnerId(winningRabbit.getId());
 
             Stage stage = (Stage) anchorPane.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -734,7 +690,9 @@ public class PlayerController implements Initializable {
 
 
     private void animateRabbitMovement(ImageView rabbit, Circle fromPath, Circle toPath) {
-        // Calculate translation offsets
+
+
+       // Calculate translation offsets
         double deltaX = toPath.getLayoutX() - fromPath.getLayoutX();
         double deltaY = toPath.getLayoutY() - fromPath.getLayoutY();
 
@@ -745,45 +703,55 @@ public class PlayerController implements Initializable {
 
         // Play the animation
         transition.play();
+
+
     }
 
 
 
    private void makeRandomHoles() {
 
-        // Reset all paths to blue
-        for (Circle path : paths) {
-            path.setFill(javafx.scene.paint.Color.DODGERBLUE);
-        }
 
-        Random random = new Random();
+       // Reset all paths to blue
+       for (Circle path : paths) {
+           path.setFill(Color.DODGERBLUE);
+       }
+
+       Random random = new Random();
         // Create a set to keep track of selected random indices
-        Set<Integer> selectedIndices = new HashSet<>();
+       Set<Integer> selectedIndices = new HashSet<>();
 
-        while (selectedIndices.size() < 3) {
-            int randomPathIndex = random.nextInt(paths.size());
-            selectedIndices.add(randomPathIndex);
-        }
+       while (selectedIndices.size() < 1) {
+           int randomPathIndex = random.nextInt(paths.size());
+           selectedIndices.add(randomPathIndex);
+       }
 
         // Change the color of the selected paths to black and remove rabbits if present
-        for (int index : selectedIndices) {
-            Circle path = paths.get(index);
-            path.setFill(javafx.scene.paint.Color.BLACK);
+       for (int index : selectedIndices) {
+           Circle path = paths.get(index);
 
-            // Check if any rabbit is on this path
-            rabbitPositionMap.entrySet().removeIf(entry -> {
-                if (entry.getValue() == path) {
+           // Create a color transition animation
+           Timeline colorTransition = new Timeline(
+                   new KeyFrame(Duration.ZERO, new KeyValue(path.fillProperty(), Color.DODGERBLUE)),
+                   new KeyFrame(Duration.millis(2000), new KeyValue(path.fillProperty(), Color.BLACK))
+           );
 
-                    // Remove the rabbit from the AnchorPane
-                    fadeOutAndRemoveRabbit(entry.getKey());
-                  //  anchorPane.getChildren().remove(entry.getKey());
-                    return true; // Remove this rabbit from the map
-                }
-                return false;
-            });
-        }
+           colorTransition.play(); // Play the animation
 
-        updatePlayerTurn();
+           // Check if any rabbit is on this path
+           rabbitPositionMap.entrySet().removeIf(entry -> {
+               if (entry.getValue() == path) {
+                   // Remove the rabbit with a fade-out animation
+                   fadeOutAndRemoveRabbit(entry.getKey());
+                   return true; // Remove this rabbit from the map
+               }
+               return false;
+           });
+       }
+
+       cardDrawn = true;
+       updatePlayerTurn();
+
 
     }
 
@@ -832,6 +800,23 @@ public class PlayerController implements Initializable {
 
         // Play the parallel transition
         parallelTransition.play();
+    }
+
+
+    public void carrotOnClicked(MouseEvent mouseEvent) {
+
+        if (randomIndex == 0) {
+            makeRandomHoles(); // Call the method to make random holes
+            randomIndex = 4;
+
+        } else {
+            // Display an alert to inform the user that the carrot can't be clicked
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Invalid Action");
+            alert.setHeaderText(null);
+            alert.setContentText("You can only click the carrot when the carrot card is drawn!");
+            alert.showAndWait();
+        }
     }
 
 

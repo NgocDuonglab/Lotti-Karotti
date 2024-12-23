@@ -15,7 +15,7 @@
             <Image url="@../images/background_board_view.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="carrot" fitHeight="150.0" fitWidth="200.0" layoutX="498.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="carrot" fitHeight="150.0" fitWidth="200.0" layoutX="498.0" layoutY="113.0" onMouseClicked="#carrotOnClicked" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/carrot.png" />
          </image></ImageView>
