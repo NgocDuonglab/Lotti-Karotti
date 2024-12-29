@@ -73,3 +73,54 @@
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
 }
+
+/* Style for the quit button */
+.quit-button {
+    -fx-background-color: #ff0000; /* Red background color */
+    -fx-text-fill: white;
+    -fx-font-size: 18px; /* Larger font size */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-radius: 10;
+    -fx-padding: 20 40; /* Larger padding */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+    -fx-alignment: center;
+}
+
+/* Style for the quit button */
+.quit-button {
+    -fx-background-color: #ff0000; /* Orange background color */
+    -fx-text-fill: white;
+    -fx-font-size: 18px; /* Larger font size */
+    -fx-font-weight: bold;
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-radius: 10;
+    -fx-padding: 20 40; /* Larger padding */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+    -fx-alignment: center;
+}
+
+.quit-button:hover {
+    -fx-background-color: #ff4500; /* Darker orange on hover */
+}
+
+.quit-button:pressed {
+    -fx-background-color: #cc3300; /* Even darker orange when pressed */
+}
+
+/* Style for the current player label */
+.current-player-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black; /* Black text color */
+    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
+    -fx-background-color: #deb887; /* Wood-like background color */
+    -fx-padding: 10;
+    -fx-border-color: #8b4513; /* Wood grain border color */
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
+}
