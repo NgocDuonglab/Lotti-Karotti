@@ -118,7 +118,7 @@ public class Board {
 
         if (card.getRandomIndex() > 0) { // Ensure movement only happens if steps > 0
             if (nextPath == null) {
-                animateRabbitToCarrot(rabbit);
+             //   animateRabbitToCarrot(rabbit);
                 controller.triggerWin(rabbit);
 
             } else {

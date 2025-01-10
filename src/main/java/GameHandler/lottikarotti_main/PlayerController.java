@@ -117,7 +117,7 @@ public class PlayerController implements Initializable {
     private void initializePlayer() {
         playerManager = new Player(
                 List.of(greenRabbit_label, yellowRabbit_label, pinkRabbit_label, purpleRabbit_label),
-                card, board,this, currentPlayer,
+                card,this, currentPlayer,
                 GameController.player// Total players
         );
     }

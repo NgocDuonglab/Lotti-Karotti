@@ -9,13 +9,9 @@ import javafx.scene.shape.Circle;
 import GameHandler.lottikarotti_main.PlayerController;
 import GameHandler.lottikarotti_main.LottiKarroti.Player.Player;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-
-
 
 public class Bunny {
 
