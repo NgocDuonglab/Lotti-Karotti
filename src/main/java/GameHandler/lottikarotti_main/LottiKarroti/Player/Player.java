@@ -17,14 +17,13 @@ public class Player {
     private final int totalPlayers;
     private int currentPlayer;
     private final PlayerController controller;
-    private final Board board;
 
 
-    public Player(List<Label> rabbitLabels, Card card, Board board, PlayerController controller, int currentPlayer, int totalPlayers) {
+
+    public Player(List<Label> rabbitLabels, Card card, PlayerController controller, int currentPlayer, int totalPlayers) {
         this.rabbitLabels = rabbitLabels;
         this.card = card;
         this.controller = controller;
-        this.board = board;
         this.currentPlayer = currentPlayer;
         this.totalPlayers = totalPlayers;
 
@@ -44,17 +43,31 @@ public class Player {
             currentPlayer = (currentPlayer + 1) % totalPlayers;
             card.resetCardDrawn();
 
-            String playerColor = getPlayerColor(initialPlayer);
+            String playerColor = getPlayerColor(currentPlayer);
             int rabbitCount = controller.chkRabbitCounts(playerColor);
-            boolean hasRabbitsToAdd = controller.checkPlayerHasRabbitsToAdd(getRabbitLabelForPlayer(initialPlayer));
+            boolean hasRabbitsToAdd  = false;
+            hasRabbitsToAdd = controller.checkPlayerHasRabbitsToAdd(getRabbitLabelForPlayer(currentPlayer));
 
             System.out.println("Player " + playerColor + " has " + rabbitCount + " rabbits.");
             System.out.println("Can add rabbits: " + hasRabbitsToAdd);
+            System.out.println(totalPlayers);
 
             if (rabbitCount > 0 || hasRabbitsToAdd) {
                 hasValidPlayer = true;
                 break;
             }
+
+            if(totalPlayers == 2 && !hasRabbitsToAdd) {
+
+                System.out.println("Player " + playerColor + " has no rabbits.!!!!!!!!");
+                //controller.triggerWin();
+                card.resetCardView();
+                return;
+
+            }
+
+
+
 
             if (currentPlayer == initialPlayer) {
                 break;
@@ -65,6 +78,8 @@ public class Player {
             System.out.println("No valid players.");
             return;
         }
+
+
 
         String playerColor = getPlayerColor(currentPlayer);
         currentPlayerLabel.setText("Current Player: " + playerColor);
