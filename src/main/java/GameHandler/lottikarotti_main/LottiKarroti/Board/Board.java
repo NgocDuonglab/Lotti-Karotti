@@ -4,7 +4,7 @@
  *
  * @Version: 1.0 (12/01/2025)
  *
- * Board Class - Manages the Game Board and Rabbit Movement
+ * Board.java- Manages the Game Board and Rabbit Movement
  *
  * The Board class encapsulates the core logic for managing the game board
  * in the Lotti Karotti game. It handles rabbit placement, movement,

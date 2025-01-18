@@ -4,7 +4,7 @@
  *
  * @Version: 3.0 (18/01/2025)
  *
- * PlayerController Class - Handles Player Interactions and Game Logic
+ * PlayerController.java - Handles Player Interactions and Game Logic
  *
  * This class serves as the controller for the Lotti Karotti game. It manages
  * player interactions, game state transitions, and various game functionalities

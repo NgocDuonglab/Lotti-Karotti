@@ -4,7 +4,7 @@
  *
  * @Version: 1.0 (12/01/2025)
  *
- * Bunny Class - Represents a Rabbit in the Lotti Karotti Game
+ * Bunny.java - Represents a Rabbit in the Lotti Karotti Game
  *
  * The Bunny class encapsulates the properties and behavior of a rabbit (bunny)
  * in the Lotti Karotti game. It interacts with the PlayerController and Board

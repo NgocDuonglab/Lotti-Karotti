@@ -4,7 +4,7 @@
  *
  * @Version: 1.0 (12/01/2025)
  *
- * Card Class - Handles Card Drawing and Animations in Lotti Karotti
+ * Card.java - Handles Card Drawing and Animations in Lotti Karotti
  *
  * The Card class manages the logic for drawing random cards during gameplay,
  * animating card interactions, and handling special events like carrot shakes.

@@ -4,7 +4,7 @@
  *
  * @Version: 1.0 (12/01/2025)
  *
- * Player Class - Manages Player Logic in Lotti Karotti
+ * Player.java- Manages Player Logic in Lotti Karotti
  *
  * The Player class handles the game logic and interactions related to the players
  * in the Lotti Karotti game. It keeps track of player turns, validates actions,

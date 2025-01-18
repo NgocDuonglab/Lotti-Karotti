@@ -4,7 +4,7 @@
  *
  * @Version: 1.0 (20/12/2024)
  *
- * WinnerView Class - Displays the Winner Screen in Lotti Karotti
+ * WinnerView.java - Displays the Winner Screen in Lotti Karotti
  *
  * The WinnerView class manages the logic and user interface for displaying
  * the winner of the Lotti Karotti game. It showcases the winning rabbit
