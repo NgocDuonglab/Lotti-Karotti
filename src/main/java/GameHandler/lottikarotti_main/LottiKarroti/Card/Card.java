@@ -1,3 +1,52 @@
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Sujung Lee (Matriculation No. 1365537)
+ *
+ * @Version: 1.0 (12/01/2025)
+ *
+ * Card Class - Handles Card Drawing and Animations in Lotti Karotti
+ *
+ * The Card class manages the logic for drawing random cards during gameplay,
+ * animating card interactions, and handling special events like carrot shakes.
+ * It integrates with the PlayerController to provide player feedback and ensure
+ * adherence to game rules.
+ *
+ * Key Responsibilities:
+ * - Handles the random selection and display of cards during a player's turn.
+ * - Manages card animations, including shake, fade, and rotate effects.
+ * - Tracks the state of the card (drawn or not) for turn validation.
+ * - Triggers special events, such as shaking the carrot, based on card type.
+ *
+ * Key Features:
+ * - cardMixOnClicked: Handles the card-drawing logic and plays animations.
+ * - shakeCarrot: Plays a shaking animation for the carrot when a special card is drawn.
+ * - resetCardView: Resets the card view with a fade-out and fade-in effect.
+ * - Tracks card state using flags and provides methods for state management.
+ *
+ * Constructor:
+ * - Initializes a Card object with the card view, carrot view, card images, and a reference
+ *   to the PlayerController for alerts and state updates.
+ *
+ * Methods:
+ * - cardMixOnClicked: Draws a card, applies animations, and updates the game state.
+ * - shakeCarrot: Plays a visual effect on the carrot to highlight special events.
+ * - getRandomIndex: Returns the index of the currently drawn card.
+ * - isCardDrawn: Checks if a card has already been drawn in the current turn.
+ * - resetCardView: Resets the card to its default state with fade animations.
+ * - trueCardDrawn / resetCardDrawn: Updates the card's drawn state.
+ * - setRandomIndex: Allows setting a specific card index for testing or special logic.
+ *
+ * Dependencies:
+ * - JavaFX for GUI components (e.g., ImageView) and animations.
+ * - PlayerController for managing game state and player interactions.
+ *
+ * Notes:
+ * - Card animations use JavaFX's animation framework for smooth visual effects.
+ * - Designed to support dynamic card interactions and enhance player experience.
+ * - Resets card view to the default state at the start of each turn.
+ */
+
+
 package GameHandler.lottikarotti_main.LottiKarroti.Card;
 
 import GameHandler.lottikarotti_main.PlayerController;
@@ -89,8 +138,6 @@ public class Card {
         carrotShake.setAutoReverse(true); // Return to the original position
         carrotShake.play(); // Play the shake animation
     }
-
-
 
     /**
      * Returns the current index of the selected random card.

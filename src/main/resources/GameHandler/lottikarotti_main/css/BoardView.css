@@ -124,30 +124,12 @@
     -fx-background-radius: 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
 }
-/* Style for the rules label */
-.rules-label {
-    -fx-font-size: 18px;
-    -fx-text-fill: white; /* White text color */
-    -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
-    -fx-background-color: #8b4513; /* Dark wood background color */
-    -fx-padding: 10;
-    -fx-border-color: #5a2d0c; /* Darker wood border color */
-    -fx-border-width: 2;
-    -fx-border-style: solid;
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 10, 0.5, 0, 0);
-    -fx-background-image:
-            linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent),
-            linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
-    -fx-background-size: 20px 20px;
-    -fx-background-position: 0 0, 10px 10px;
-}
 
 /* Style for the rules button */
 .rules-button {
     -fx-background-color: #ff0000; /* Red background color */
     -fx-text-fill: white;
-    -fx-font-size: 18px; /* Larger font size */
+    -fx-font-size: 17px; /* Larger font size */
     -fx-font-weight: bold;
     -fx-font-family: 'Comic Sans MS', cursive, sans-serif;
     -fx-background-radius: 10;
