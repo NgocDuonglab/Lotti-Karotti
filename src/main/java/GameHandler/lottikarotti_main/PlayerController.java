@@ -1,11 +1,48 @@
-package GameHandler.lottikarotti_main;
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Sujung Lee (Matriculation No. 1365537)
+ *
+ * @Version: 3.0 (18/01/2025)
+ *
+ * PlayerController.java - Handles Player Interactions and Game Logic
+ *
+ * This class serves as the controller for the Lotti Karotti game. It manages
+ * player interactions, game state transitions, and various game functionalities
+ * such as drawing cards, moving rabbits, and displaying game rules.
+ *
+ * Key Features:
+ * - Manages rabbit movements and positions on the board.
+ * - Handles card interactions and random events (e.g., carrot card).
+ * - Tracks player turn and updates the current player.
+ * - Displays game rules and winner view.
+ * - Provides user alerts for important game events and errors.
+ *
+ * Dependencies:
+ * - JavaFX for GUI interactions (e.g., ImageView, Label, Alert, etc.).
+ * - Board, Bunny, Player, and Card classes for game state management.
+ *
+ * Initialization:
+ * - Initializes board, players, cards, rabbits, and paths.
+ * - Configures the game dynamically based on the number of players.
+ *
+ * Methods:
+ * - initialize: Sets up the initial state of the game when the FXML is loaded.
+ * - cardMixOnClicked: Handles card mix button action.
+ * - rabbitOnClicked: Handles rabbit click events.
+ * - buttonRulesOnClicked: Displays the game rules in a new window.
+ * - buttonQuitOnClicked: Handles the quit button action with confirmation.
+ * - carrotOnClicked: Handles the carrot click action when the carrot card is drawn.
+ * - triggerWin: Handles the winning scenario and switches to the winner view.
+ * - showAlert: Displays alerts for information, warnings, or errors.
+ * - chkRabbitCounts: Checks how many rabbits of a specific color remain on paths.
+ */
 
+package GameHandler.lottikarotti_main;
 
 import GameHandler.lottikarotti_main.LottiKarroti.Board.Board;
 import GameHandler.lottikarotti_main.LottiKarroti.Bunny.Bunny;
 import GameHandler.lottikarotti_main.LottiKarroti.Player.Player;
 import GameHandler.lottikarotti_main.LottiKarroti.Card.Card;
-
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -21,15 +58,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Circle;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
-
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
-
 
 public class PlayerController implements Initializable {
 
@@ -39,6 +76,7 @@ public class PlayerController implements Initializable {
             path20, path21, path22, path23, path24, path25, path26, path27;
     public Button buttonQuit;
     public ImageView carrot;
+    public Button buttonRules;
 
     @FXML
     private AnchorPane anchorPane;
@@ -51,6 +89,8 @@ public class PlayerController implements Initializable {
     private ImageView greenRabbit;
     @FXML
     private ImageView yellowRabbit;
+    @FXML
+    private ImageView rules;
 
     @FXML
     private Label greenRabbit_label;
@@ -63,6 +103,9 @@ public class PlayerController implements Initializable {
 
     private int currentPlayer = 0; // Tracks the current player (0: Green, 1: Yellow, 2: Pink, 3: Purple)
     private final int totalPlayers = GameController.player; // Total number of players
+
+    private static final String RULES_IMAGE_PATH = "/GameHandler/lottikarotti_main/images/rules.jpg";
+
 
     @FXML
     private Label currentPlayerLabel; // Label to display the current player
@@ -204,6 +247,32 @@ public class PlayerController implements Initializable {
     }
 
     /**
+     * Handles the action when the "Rules" is clicked.
+     */
+
+    @FXML
+    public void buttonRulesOnClicked() {
+        try {
+            Image rulesImage = new Image(Objects.requireNonNull(getClass().getResource(RULES_IMAGE_PATH)).toExternalForm());
+            ImageView imageView = new ImageView(rulesImage);
+            imageView.setFitWidth(1000);
+            imageView.setPreserveRatio(true);
+
+            StackPane layout = new StackPane(imageView);
+            Scene scene = new Scene(layout, 1000, 563);
+
+            Stage stage = new Stage();
+            stage.setTitle("Game Rules");
+            stage.setScene(scene);
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(anchorPane.getScene().getWindow());
+            stage.show();
+        } catch (Exception e) {
+            showAlert("Error", "Unable to load game rules.", Alert.AlertType.ERROR);
+        }
+    }
+
+    /**
      * Determines the Bunny object corresponding to a clicked rabbit ImageView.
      */
     private Bunny determineBunnyByImageView(ImageView imageView) {
@@ -334,5 +403,7 @@ public class PlayerController implements Initializable {
         return rabbitCountOnPath;
 
     }
+
+
 }
 

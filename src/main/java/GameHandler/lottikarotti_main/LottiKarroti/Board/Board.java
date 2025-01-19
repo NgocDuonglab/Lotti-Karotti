@@ -1,3 +1,54 @@
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Sujung Lee (Matriculation No. 1365537)
+ *
+ * @Version: 1.0 (12/01/2025)
+ *
+ * Board.java- Manages the Game Board and Rabbit Movement
+ *
+ * The Board class encapsulates the core logic for managing the game board
+ * in the Lotti Karotti game. It handles rabbit placement, movement,
+ * path interactions, and special events such as holes and winning scenarios.
+ *
+ * Key Responsibilities:
+ * - Tracks rabbit positions on the board using a mapping of ImageView to Circle.
+ * - Manages interactions with paths, including random holes and rabbit removal.
+ * - Animates rabbit movement, enlargements, and transitions during gameplay.
+ * - Updates player turns and enforces game rules such as skipping occupied paths.
+ * - Notifies the PlayerController for game status updates and win conditions.
+ *
+ * Key Features:
+ * - Rabbit movement logic, including skipping occupied paths and handling carrot cards.
+ * - Random hole creation and animation with rabbit removal if affected.
+ * - Animation of rabbit movements and special effects (e.g., fade-out, scaling).
+ * - Dynamic adjustment of rabbit counts and player turns based on game state.
+ *
+ * Dependencies:
+ * - JavaFX for GUI elements (e.g., ImageView, Circle, Label, animations).
+ * - PlayerController for managing game state updates.
+ * - Player and Card classes for player-specific and card-specific logic.
+ *
+ * Constructor:
+ * - Initializes the board with references to the game components such as paths,
+ *   players, rabbits, and cards, as well as GUI elements for animation and display.
+ *
+ * Methods:
+ * - addRabbitToPath: Places a rabbit on the starting path and tracks its position.
+ * - moveRabbit: Handles rabbit movement along the paths based on drawn cards.
+ * - getNextPath: Determines the next valid path for a rabbit, skipping occupied paths.
+ * - makeRandomHoles: Creates random holes on the board and removes rabbits on those holes.
+ * - fadeOutAndRemoveRabbit: Animates and removes a rabbit that falls into a hole.
+ * - animateRabbitMovement: Animates rabbit movement between two points on the board.
+ * - animateRabbitToCarrot: Animates a rabbit moving directly to the carrot.
+ *
+ * Notes:
+ * - The class supports dynamic path management and concurrency-safe rabbit counts
+ *   using ConcurrentHashMap.
+ * - Path transitions and animations use JavaFX's Transition API.
+ * - The Board class integrates with other components to ensure seamless gameplay.
+ */
+
+
 package GameHandler.lottikarotti_main.LottiKarroti.Board;
 
 import GameHandler.lottikarotti_main.PlayerController;

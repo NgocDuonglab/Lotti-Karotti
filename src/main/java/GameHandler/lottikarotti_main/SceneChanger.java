@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger {
-    private static Stage primaryStage;
+    public static Stage primaryStage;
 
     public static void setPrimaryStage(Stage stage) {
         primaryStage = stage;

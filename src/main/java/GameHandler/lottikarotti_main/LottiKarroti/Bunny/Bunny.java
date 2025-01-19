@@ -1,3 +1,51 @@
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Sujung Lee (Matriculation No. 1365537)
+ *
+ * @Version: 1.0 (12/01/2025)
+ *
+ * Bunny.java - Represents a Rabbit in the Lotti Karotti Game
+ *
+ * The Bunny class encapsulates the properties and behavior of a rabbit (bunny)
+ * in the Lotti Karotti game. It interacts with the PlayerController and Board
+ * classes to manage player actions, including adding new rabbits to the board
+ * and moving them during gameplay.
+ *
+ * Key Responsibilities:
+ * - Tracks the properties of individual bunnies (e.g., color, image, label).
+ * - Handles click events for bunnies to enable interaction during the game.
+ * - Validates player actions based on game rules (e.g., turn validation, card drawing).
+ * - Manages visibility and initialization for all bunnies.
+ *
+ * Key Features:
+ * - Supports adding new rabbits to the board if the player has any remaining.
+ * - Handles moving existing rabbits along the paths based on drawn cards.
+ * - Validates turn rules, ensuring players can only interact with their bunnies.
+ * - Provides a centralized list of all bunnies for game-wide visibility management.
+ *
+ * Constructor:
+ * - Initializes a Bunny object with its color, image, label, image path,
+ *   and references to Player and Board managers for game interaction.
+ *
+ * Methods:
+ * - getLabel: Returns the label associated with the bunny's player.
+ * - enableAllRabbits: Enables visibility for all bunnies and their labels.
+ * - rabbitOnClicked: Handles the logic for bunny clicks, determining whether
+ *   to add a new rabbit to the board or move an existing one.
+ *
+ * Dependencies:
+ * - JavaFX for GUI interactions (e.g., ImageView, Label, MouseEvent).
+ * - PlayerController for managing game interactions and alerts.
+ * - Board for handling path-based movements and game state updates.
+ * - Player for validating player-specific rules such as turns.
+ *
+ * Notes:
+ * - The Bunny class maintains a static list of all bunnies for centralized management.
+ * - Integration with the Board and PlayerController ensures seamless gameplay.
+ * - Designed to provide intuitive and responsive interactions for players.
+ */
+
+
 package GameHandler.lottikarotti_main.LottiKarroti.Bunny;
 
 import GameHandler.lottikarotti_main.LottiKarroti.Board.Board;

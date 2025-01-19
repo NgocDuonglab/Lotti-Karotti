@@ -1,7 +1,53 @@
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Sujung Lee (Matriculation No. 1365537)
+ *
+ * @Version: 1.0 (12/01/2025)
+ *
+ * Player.java- Manages Player Logic in Lotti Karotti
+ *
+ * The Player class handles the game logic and interactions related to the players
+ * in the Lotti Karotti game. It keeps track of player turns, validates actions,
+ * and integrates with other components like the Board and Card classes to ensure
+ * smooth gameplay.
+ *
+ * Key Responsibilities:
+ * - Manages the turn-based gameplay by updating and validating player turns.
+ * - Validates player actions, such as drawing a card or moving a rabbit.
+ * - Tracks and retrieves player-specific data, including rabbit labels and colors.
+ * - Ensures players adhere to game rules, including card-drawing requirements.
+ *
+ * Key Features:
+ * - updatePlayerTurn: Manages turn rotation and ensures valid players can continue.
+ * - validateRabbitAction: Validates whether a rabbit action is permissible.
+ * - getPlayerColor: Retrieves the color associated with a player index.
+ * - getRabbitPlayer: Maps a rabbit ImageView to its associated player.
+ * - getCurrentPlayer: Provides the index of the current player.
+ *
+ * Constructor:
+ * - Initializes the Player object with rabbit labels, card logic, and total player count.
+ *
+ * Methods:
+ * - updatePlayerTurn: Handles the turn progression and ensures a valid player is chosen.
+ * - validateRabbitAction: Checks if the current action (e.g., moving a rabbit) follows game rules.
+ * - getPlayerColor: Maps player indices to their respective colors.
+ * - getRabbitPlayer: Identifies the player associated with a specific rabbit ImageView.
+ * - getRabbitLabelForPlayer: Retrieves the label for a given player's remaining rabbits.
+ *
+ * Dependencies:
+ * - JavaFX for GUI elements (e.g., Label, ImageView).
+ * - PlayerController for managing game state and alerts.
+ * - Card for managing card-related logic during turns.
+ *
+ * Notes:
+ * - Player turn logic supports up to 4 players with dynamic validation of rabbit counts.
+ * - Designed to ensure seamless integration with other game components.
+ * - Throws appropriate exceptions for invalid indices or unexpected states.
+ */
+
 package GameHandler.lottikarotti_main.LottiKarroti.Player;
 
 import GameHandler.lottikarotti_main.LottiKarroti.Card.Card;
-import GameHandler.lottikarotti_main.LottiKarroti.Board.Board;
 import GameHandler.lottikarotti_main.PlayerController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -29,7 +75,6 @@ public class Player {
 
 
     }
-
 
     /**
      * Updates the current player's turn and checks for valid players who can play.
@@ -66,9 +111,6 @@ public class Player {
 
             }
 
-
-
-
             if (currentPlayer == initialPlayer) {
                 break;
             }
@@ -78,8 +120,6 @@ public class Player {
             System.out.println("No valid players.");
             return;
         }
-
-
 
         String playerColor = getPlayerColor(currentPlayer);
         currentPlayerLabel.setText("Current Player: " + playerColor);
@@ -170,6 +210,5 @@ public class Player {
     public int getCurrentPlayer() {
         return currentPlayer;
     }
-
 
 }
