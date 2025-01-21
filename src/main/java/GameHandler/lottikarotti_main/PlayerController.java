@@ -1,6 +1,6 @@
 /**
  * OOP Java Project  WiSe 2024/2025
- * @Author: Sujung Lee (Matriculation No. 1365537)
+ * @Author: Sujung Lee (Matriculation Nr. 1365537)
  *
  * @Version: 3.0 (18/01/2025)
  *

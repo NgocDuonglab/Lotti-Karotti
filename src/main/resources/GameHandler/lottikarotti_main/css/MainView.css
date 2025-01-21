@@ -1,3 +1,12 @@
+/**
+ * OOP Java Project  WiSe 2024/2025
+ * @Author: Duong Bao Ngoc (Matriculation Nr. 1589562)
+ *
+ * @Version: 1.0 (20/12/2024)
+ *
+ * MainView.css - Styling for all components of the start scene.
+ */
+
 /* Style for the game name label */
 .label {
     -fx-font-size: 24px;
