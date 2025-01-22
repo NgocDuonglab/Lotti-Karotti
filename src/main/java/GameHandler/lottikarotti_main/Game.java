@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class Game extends Application {
         primaryStage.setTitle("Lotti Karotti");
 
         // Set the icon for the primary stage
-        Image icon = new Image(getClass().getResourceAsStream("/GameHandler/lottikarotti_main/images/carrot.png"));
+        Image icon = new Image(getClass().getResourceAsStream("/GameHandler/lottikarotti_main/images/icon_game.jpg"));
         primaryStage.getIcons().add(icon);
 
         primaryStage.show();
