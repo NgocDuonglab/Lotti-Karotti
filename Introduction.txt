@@ -1,0 +1,5 @@
+- To execute the source code in the IDE, run either “Main.java” or “Game.java”. Alternatively, you can directly start our board game Lotti Karotti by clicking on the “Lotti Karotti.exe” file.
+
+- The source code was developed using Java version 23.0.1 and JavaFX version 23.0.2.
+
+- No external libraries, dependencies, software, packages, plugins, servers, or cloud services were required.
